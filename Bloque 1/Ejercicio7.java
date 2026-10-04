@@ -1,8 +1,10 @@
+
 import java.util.Scanner;
 
 public class Ejercicio7 {
+
     public static void main(String[] args) {
-         Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         try {
             System.out.println("--------------------");
             System.out.println("MENÚ DE INICIO");
@@ -17,17 +19,15 @@ public class Ejercicio7 {
                 switch (opcion) {
                     case "1":
                         ProcessBuilder unity = new ProcessBuilder("C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.45f1\\Editor\\Unity.exe");
-                        Process unityAbrir = unity.start();     
-                        
+                        Process unityAbrir = unity.start();
+
                         Thread.sleep(5000);
                         System.out.println("¿Desea cerrar Unity? Si/No");
                         String respuesta = sc.nextLine();
 
                         if (respuesta.equalsIgnoreCase("Si")) {
-                            
 
                             System.out.println("Cerrando programa en tres segundos...");
-
                             Thread.sleep(3000);
 
                             unityAbrir.destroy();
@@ -49,13 +49,12 @@ public class Ejercicio7 {
                             System.out.println("Cerrando programa en tres segundos");
 
                             Thread.sleep(3000);
-
                             netbeansAbrir.destroy();
 
                         } else if (respuesta2.equalsIgnoreCase("No")) {
                             System.out.println("El programa se mantendrá activado");
                         }
-                    
+
                         break;
 
                     case "3":

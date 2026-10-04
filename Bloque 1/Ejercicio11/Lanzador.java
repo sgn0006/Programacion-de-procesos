@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 public class Lanzador {
     
     public static void main(String[] args) {
+
         try {
         String java = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
         String cp = System.getProperty("java.class.path");
