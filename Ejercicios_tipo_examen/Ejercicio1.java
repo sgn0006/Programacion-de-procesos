@@ -22,7 +22,7 @@ public class Ejercicio1 {
 
             // opción 3
             String archivos = "explorer";
-            String descargas = "C:\\Users\\USUARIO\\Downloads";
+            String descargas = System.getProperty("user.home") + "\\Downloads";
 
             // opción 4
             String comando = "taskkill";
@@ -55,7 +55,7 @@ public class Ejercicio1 {
                         opc3.start();
                         break;
                     case 4:
-                        ProcessBuilder opc4 = new ProcessBuilder("/cmd", "/c", comando, "/F", "/IM", notas);
+                        ProcessBuilder opc4 = new ProcessBuilder("/cmd", "/c", comando, "/F", "/IM" + notas);
                         opc4.start();
                         break;
                     case 5:
