@@ -6,8 +6,10 @@ public class Ejercicio1 {
     public static void main(String[] args) {
 
         try {
+            Scanner sc = new Scanner(System.in);
+
             // do while
-            boolean salir = true;
+            boolean salir = false;
 
             // switch
             int opciones;
@@ -23,12 +25,9 @@ public class Ejercicio1 {
             // opción 3
             String archivos = "explorer";
             String descargas = System.getProperty("user.home") + "\\Downloads";
-
-            // opción 4
-            String comando = "taskkill";
+            
 
             do {
-                Scanner sc = new Scanner(System.in);
 
                 System.out.println("==========================================");
                 System.out.println("=============PANEL DE ESTUDIO=============");
@@ -55,7 +54,7 @@ public class Ejercicio1 {
                         opc3.start();
                         break;
                     case 4:
-                        ProcessBuilder opc4 = new ProcessBuilder("/cmd", "/c", comando, "/F", "/IM" + notas);
+                        ProcessBuilder opc4 = new ProcessBuilder("cmd", "/c", "taskkill", "/F", "/IM", "notepad.exe");
                         opc4.start();
                         break;
                     case 5:
@@ -67,9 +66,9 @@ public class Ejercicio1 {
                         throw new AssertionError();
                 }
 
-                sc.close();
+            } while (salir == false);
 
-            } while (salir = false);
+            sc.close();
 
         } catch (Exception e) {
 
