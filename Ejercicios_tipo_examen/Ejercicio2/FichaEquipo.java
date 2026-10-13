@@ -34,28 +34,29 @@ public class FichaEquipo {
 
             String archivo = "Ejercicio2\\equipo.txt";
 
-            //Creo y ejecuto el comando
+            // Creo y ejecuto el comando
             ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "systeminfo");
             Process comando = pb.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(comando.getInputStream()));
 
-            //Escribo en equipo.txt
+            // Escribo en equipo.txt
             FileWriter writer = new FileWriter(archivo, false);
 
-            //Contador lineas guardadas
+            // Contador lineas guardadas
             int guardadas = 0;
 
             String linea;
 
             while ((linea = reader.readLine()) != null) {
-                if (linea.contains("Nombre de host") || linea.contains("Nombre del sistema operativo") || linea.contains("Modelo del sistema")) {
+                if (linea.contains("Nombre de host") || linea.contains("Nombre del sistema operativo")
+                        || linea.contains("Modelo del sistema")) {
                     writer.write(linea + "/n");
                     guardadas++;
                 }
             }
             System.out.println("Se han guardado " + guardadas + " lineas.");
 
-            //cerrar todo para que se guarde en el fichero
+            // cerrar todo para que se guarde en el fichero
             writer.close();
             reader.close();
             comando.close();
