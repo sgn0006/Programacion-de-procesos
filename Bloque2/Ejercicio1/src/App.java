@@ -3,7 +3,7 @@ public class App {
 
         //start() -> Inicia el proceso (llama al run())
         //join() -> Esperar hasta que el hilo termine (suele ir en el main)
-        //sleep() -> 
+        //sleep() ->    
         
         Hilo hilo1 = new Hilo(1);
         Hilo hilo2 = new Hilo(2);
