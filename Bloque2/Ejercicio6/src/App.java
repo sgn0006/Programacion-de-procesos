@@ -1,25 +1,22 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        long numeros[] = new long[200_000_000];
+        int[] array = new int[200000000];
 
-        long t0 = System.currentTimeMillis();
-        for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = (long) (Math.random() * 100);
-            System.out.println(" Este es el número "+ i + "......................" + numeros[i]);
-        }
-        
-        long t1 = System.currentTimeMillis();
-        System.out.println("Generar los datos ha tardado: " + (t1 - t0) + " ms");
-        
+        long antesArray = System.currentTimeMillis();
         long suma = 0;
-        long t2 = System.currentTimeMillis();
-        for (int i = 0; i < numeros.length; i++) {
-            suma += numeros[i];
-            System.out.println(" Esta es la suma "+ i + "......................" + suma);
-        }
-        System.out.println("El resultado es: " + suma);
-        System.out.println("El sumar los datos ha tardado: " + (t2 - t1) + " ms");
 
+        for (int i = 0; i < array.length; i++) {
+
+            array[i] = (int) (Math.random() * 100);
+            suma += array[i];
+        }
+
+        long despuesArray = System.currentTimeMillis();
+        System.out.println("tiempo total de la app: " + (antesArray + despuesArray) + "ms");
+        System.out.println("total de suma: " + suma);
+
+
+        
     }
 }

@@ -21,7 +21,7 @@ public class Caballo extends Thread {
                 System.out.println("El caballo " + nombre + " está en el metro " + distancia);
 
                 posicion = (int) ((Math.random() * 10) + 1);
-
+                 
                 sleep(1000);
 
                 distancia += posicion;
